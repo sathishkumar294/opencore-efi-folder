@@ -36,3 +36,12 @@ EFI\BOOT\BOOTX64.EFI
 4. Now the open core bootloader with appear (wait ~15 secs) and you have acess to the boot options.
 
 5. Reset NVRAM to make the drive appear in the MSI bootloader UEFI device list
+
+
+## Improve font rendering on 1080p
+
+Run this command in terminal. I was able to see instant improvement in font rendered in Safari, VS Code etc. Reboot is suggested.
+
+```sh
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+```
