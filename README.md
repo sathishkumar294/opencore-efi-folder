@@ -9,7 +9,30 @@ EFI Folder for installation using OpenCore v0.6.7
 
 [✔] Ethernet
 
-[x] Boot without USB
+[✔] Boot without USB
 
 
 Ref: https://dortania.github.io/OpenCore-Install-Guide/
+
+## If the boot device does not show up in the boot drive list, boot into it manually using the UEFI Shell
+
+1. List the drives
+```sh
+> map
+```
+
+2. Find the drive that contains the apple EFI partition and switch to it (trial and error - switch to each device using `fs1:` command - replace `fs1` with your drive, then ls to see if your EFI folder is there)
+
+```sh
+> fs3:
+```
+
+3. Start the `bootx64.efi`
+
+```sh
+EFI\BOOT\BOOTX64.EFI
+```
+
+4. Now the open core bootloader with appear (wait ~15 secs) and you have acess to the boot options.
+
+5. Reset NVRAM to make the drive appear in the MSI bootloader UEFI device list
