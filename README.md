@@ -45,3 +45,4 @@ Run this command in terminal. I was able to see instant improvement in font rend
 ```sh
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 ```
+Ref: https://www.cleverfiles.com/help/mac-fonts-text-blurry.html
