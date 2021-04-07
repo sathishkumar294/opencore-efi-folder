@@ -34,10 +34,14 @@ Apple Services ✓
 
 Two finger guestures ✓
 
+Camera ✓
+
 ## Not working
 Multi-finger gestures 
 
 Thunderbolt port
+
+Built-in microphone
 
 ## Reference
 Used the EFI folder provided by Jack Lo at https://osxlatitude.com/forums/topic/14721-dell-latitude-7480-skylake-opencore-064-upgrading-catalina-to-big-sur/?do=findComment&comment=106097
