@@ -40,7 +40,7 @@ Built-in microphone ✓
 
 ## Not working
 
-Multi-finger gestures
+Multi-finger gestures 
 
 Sleep and wake
 
@@ -69,3 +69,26 @@ By default, the San Francisco fonts are not available for other applications to 
 
 ## Make MacOS the default startup disk
 To automatically choose MacOS instead of windows from booting up.
+
+## To clone MacOS to another partition
+1. Create an empty partition in Windows and format it to NTFS or FAT32
+2. Open Disk Utility and format the new partition to APFS.
+3. Use [Carbon Copy Cloner](https://bombich.com) to clone from the source volume to target volume.
+4. Add entry for MacOS in grub using this [guide](https://github.com/SayantanRC/URLs/blob/master/grub_to_opencore.md). Thanks [@SayantanRC](https://github.com/SayantanRC) 
+    1. Boot into GRUB and create a new boot entry in `/etc/grub.d/40_custom`
+    ```sh
+    menuentry 'MacOS' $menuentry_id_option 'macOS-efi' {
+        insmod chain
+        insmod part_gpt
+        insmod fat
+        set root=(hd0,gpt1)
+        chainloader /efi/Mac/oc/for_grub/OpenCore.efi
+        set root=(hd0,gpt1)/efi/Mac
+    }
+    ```
+    2. Copy the EFI folder from the source EFI folder (MacOS) to a new folder named 'Mac' in ubuntu's efi(/boot/efi) folder. To mount the efi folder of ubuntu in RW mode,
+    ```sh
+    sudo mount -o rw,remount /boot/efi
+    ```
+5. Reboot into Grub and select the new entry to boot.
+6. It is advisable to clear the NVRAM once and set the new disk as the default start-up disk in the MacOS System Preferences.
