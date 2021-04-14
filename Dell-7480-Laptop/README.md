@@ -38,11 +38,12 @@ Camera ✓
 
 Built-in microphone ✓
 
+Sleep and wake ✓
+    is working after moving the installation to internal drive. Not working when the OS is installed on an external USB drive.
+
 ## Not working
 
-Multi-finger gestures 
-
-Sleep and wake
+Multi-finger gestures
 
 ## To Check
 
