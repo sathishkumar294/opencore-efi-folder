@@ -99,5 +99,15 @@ sudo mount -o rw,remount /boot/efi
 update-grub
 ```
 4. Reboot into Grub and select the new entry to boot.
-4. Clear the NVRAM from the opencore menu
+4. Clear the NVRAM from the opencore menu. (Press `SPACE` once on the opencore boot menu)
 5. Important: Select the new disk as the default start-up disk in the MacOS System Preferences.
+
+## Directly boot into MacOS
+In order to directly boot into MacOS using opencore bootloader, the `bootx64.efi` file should be in the EFI/Boot folder of the EFI partition. The OC folder should be in the same level as the Boot folder.
+1. In case you have linux distro using the same EFI partition, rename the MacOS `bootx64.efi` to another name (say `bootx64_Mac.efi`) and place it in the same EFI/Boot folder. 
+2. Place the OC folder at the same level as the Boot folder
+3. Reboot into BIOS setup on the Dell machine and add a custom entry pointing to this `bootx64_Mac.efi` file. Move this boot option to the top.
+4. Exit the boot menu and you will boot directly into Opencore bootloader.
+5. Clear the NVRAM from the opencore menu. (Press `SPACE` once on the opencore boot menu)
+5. Important: Select the new disk as the default start-up disk in the MacOS System Preferences.
+
