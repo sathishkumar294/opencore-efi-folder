@@ -1,5 +1,8 @@
 # EFI Folder for Dell Latitude 7480
 
+## Update: April, 2022:
+I have started using the EFI folder from https://github.com/Lovely-XPP/Dell-Latitude-E7480-Hackintosh and it works without any issues (except 4K output) so far. Please refer to @Lovely-XPP's work from now on. Thanks!
+
 ## System Specifications:
 * Dell Latitude 7480
 * CPU: i7-7600U, Dual core Intel i7 @2.9GHz
