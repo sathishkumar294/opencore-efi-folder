@@ -79,14 +79,14 @@ To automatically choose MacOS instead of windows from booting up in the OpenCore
 ## Add OpenCore bootloader to GRUB
 In case you are using linux and want to a menu for opencore bootloader in grub, you need a custom entry to grub. Add entry for MacOS in grub using this [guide](https://github.com/SayantanRC/URLs/blob/master/grub_to_opencore.md). Thanks [@SayantanRC](https://github.com/SayantanRC) 
 
-1. As a sudo user create a new boot entry in `/etc/grub.d/40_custom`
+1. As a sudo user create a new boot entry in `/etc/grub.d/40_custom`. The `chailoader` location is the relative path of Opencore.efi from `/boot/efi` directory. The `config.plist` file should be in the same folder as `Opencore.efi` (ideally the `OC` folder).
 ```sh
 menuentry 'OpenCore' --class macosx --class os $menuentry_id_option 'opencore-from-grub' {
     insmod chain
     insmod part_gpt
     insmod fat
     set root=(hd0,gpt1)
-    chainloader /efi/Mac/oc/for_grub/OpenCore.efi
+    chainloader /efi/Mac/oc/OpenCore.efi
     set root=(hd0,gpt1)/efi/Mac
 }
 ```
