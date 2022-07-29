@@ -3,6 +3,12 @@
 ## Update: April, 2022:
 I have started using the EFI folder from https://github.com/Lovely-XPP/Dell-Latitude-E7480-Hackintosh and it works without any issues (except 4K output) so far. Please refer to @Lovely-XPP's work from now on. Thanks!
 
+## Fix for 4K@60 ouptut through TB3 -> DP (alternate mode)
+1. Set the DVMT pre-allocated memory to 64MB (or 96MB) following this [guide](https://osxlatitude.com/forums/topic/13963-changing-dvmt-values-in-bios/). For my laptop, the variable corresponding to DVMT is `0x795`
+2. Remove existing patches on framebuffer memory. See the explanation [here](https://osxlatitude.com/forums/topic/17429-latitude-7480-unable-to-obtain-4k-resolution-on-external-monitor-through-tb-dp-port/?do=findComment&comment=115399)
+3. Reboot and enjoy 4K@60 through thunderbolt 3 port.
+Note: 4K does not work with HDMI yet.
+
 ## System Specifications:
 * Dell Latitude 7480
 * CPU: i7-7600U, Dual core Intel i7 @2.9GHz
